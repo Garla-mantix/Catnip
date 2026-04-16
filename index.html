@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catshop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cat Shop - Home</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/home.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <a href="index.html"><span>Cat</span>Shop</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span class="hamburger"></span>
+    </button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="Pages/cats.html">Cats</a></li>
+        <li><a href="Pages/about.html">About</a></li>
+        <li>
+          <a href="Pages/cart.html" class="cart-link">
+            Cart
+            <span class="cart-badge" id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Welcome to <span>Cat</span>Shop</h1>
+      <p>Your destination for finding the perfect cat. Explore our selection of cat breeds from around the world and find your new best friend.</p>
+      <a href="Pages/cats.html" class="btn btn-primary">Explore our cats</a>
+    </section>
+
+    <!-- Card section -->
+    <section class="features">
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🐱</div>
+        <h2>Wide selection</h2>
+        <p>We offer a wide selection of cat breeds from around the world, all with unique personalities.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">🚚</div>
+        <h2>Fast delivery</h2>
+        <p>Your new cat is delivered safely and securely straight to your door.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon" aria-hidden="true">💛</div>
+        <h2>Happy-cat guarantee</h2>
+        <p>We guarantee that both you and your new cat will be happy with your new life together.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 The Cat Shop. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
