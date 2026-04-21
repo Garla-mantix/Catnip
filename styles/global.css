@@ -171,7 +171,34 @@ main {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  flex-direction: column;
+  gap: 5px;
 }
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before { top: -6px; }
+.hamburger::after  { top:  6px; }
 
 /* ===== Buttons ===== */
 .btn {
@@ -251,7 +278,89 @@ main {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 64px auto;
     padding: 0 1.25rem;
+    height: auto;
+    gap: 0;
+  }
+
+  .nav-brand {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo {
+    height: 52px;
+    width: 52px;
+  }
+
+  .nav-toggle {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    border-top: 1px solid var(--border);
+  }
+
+  .navbar:has(.nav-links.open) nav {
+    max-height: 300px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0.25rem 0 0.5rem;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 0;
+    background: none;
+  }
+
+  .nav-links a:hover {
+    border-radius: 0;
+    background: var(--surface);
+  }
+
+  .nav-links a.active {
+    border-radius: 0;
+    background: none;
+    font-weight: 700;
+  }
+
+  /* Cart badge inline on mobile */
+  .cart-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .cart-badge {
+    position: static;
+    width: auto;
+    height: auto;
+    min-width: 20px;
+    padding: 0 5px;
+    font-size: 0.7rem;
+    border-radius: var(--pill);
   }
 
   main {
