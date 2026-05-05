@@ -100,6 +100,7 @@ function buildCatCard(cat) {
   const refId = cat.reference_image_id;
   const img = `<img src="https://cdn2.thecatapi.com/images/${refId}.jpg" alt="${cat.name}" class="cat-card-image" data-ref="${refId}" loading="lazy">`;
   const origin = cat.origin || 'Unknown';
+  const description = cat.description || 'No description available.';
 
   // data-id stores the breed id so addToCart() can look up which cat was clicked.
   return `
@@ -108,6 +109,7 @@ function buildCatCard(cat) {
       <div class="cat-card-body">
         <h2>${cat.name}</h2>
         <p class="origin">${origin}</p>
+        <p class="description">${description}</p>
         <button class="btn btn-primary add-to-cart" data-id="${cat.id}">Add to cart</button>
       </div>
     </article>
